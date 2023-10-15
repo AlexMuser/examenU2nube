@@ -57,11 +57,6 @@
             </div>
 
             <div class="form-group">
-                <label for="foto">Imagen de la película</label>
-                <input type="file" name="foto" class="form-control">
-            </div>
-
-            <div class="form-group">
                 <label for="id_genero">Género de la película</label>
                 <select name="id_genero" class="form-control">
                     @foreach ($generos as $id => $genero)

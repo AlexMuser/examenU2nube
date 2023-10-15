@@ -15,7 +15,7 @@ class PeliculasController extends Controller
     public function index()
     {
         $peliculas = Peliculas::where('status', 1)->orderBy('id')->get();
-        return view('peliculas.index', compact('peliculas'));
+        return view('Peliculas.index', compact('peliculas'));
     }
 
     /**
@@ -25,7 +25,7 @@ class PeliculasController extends Controller
     {
         $generos = Genero::where('status', 1)->pluck('nombre', 'id');
         $clasificaciones = Clasificacion::where('status', 1)->pluck('nombre', 'id');
-        return view('peliculas.create', compact('generos', 'clasificaciones'));
+        return view('Peliculas.create', compact('generos', 'clasificaciones'));
     }
 
     /**
@@ -54,7 +54,7 @@ class PeliculasController extends Controller
     public function show($id)
     {
         $pelicula = Peliculas::find($id);
-        return view('peliculas.read', compact('pelicula'));
+        return view('Peliculas.read', compact('pelicula'));
     }
 
     /**
@@ -65,7 +65,7 @@ class PeliculasController extends Controller
         $pelicula = Peliculas::find($id);
         $generos = Genero::where('status', 1)->pluck('nombre', 'id');
         $clasificaciones = Clasificacion::where('status', 1)->pluck('nombre', 'id');
-        return view('peliculas.edit', compact('pelicula', 'generos', 'clasificaciones'));
+        return view('Peliculas.edit', compact('pelicula', 'generos', 'clasificaciones'));
     }
 
     /**
